@@ -80,3 +80,58 @@ app.post('/user',(req,res)=>{
 app.listen(3000, () => {
 console.log('Server is running on port 3000');
 });
+
+#### RESTful APIs:
+
+Express is widely used for building RESTful APIs.
+with features like route and parameters, query parameters, request body parsing, and response formatting, Express simplifies the process of building APIs.
+
+#### Example:
+
+const express = require('express');
+const app = express();
+
+// Define routes for CRUD operations on resource 'users'
+app.get('/users', (req, res) => {
+// Get all users
+});
+
+app.post('/users', (req, res) => {
+// Create a new user
+});
+
+app.put('/users/:id', (req, res) => {
+// Update user with given id
+});
+
+app.delete('/users/:id', (req, res) => {
+// Delete user with given id
+});
+
+app.listen(3000, () => {
+console.log('Server is running on port 3000');
+});
+
+#### Microservices:
+
+Express is lightweight and flexible ,making it suitable for building microservices architectures.Each microservice can be built using Express and Communicate with other services via HTTP or message queues.
+
+#### Example:
+
+const express = require('express');
+const app = express();
+
+// Define routes for user management
+app.get('/users', (req, res) => {
+// Get all users
+});
+
+app.post('/users', (req, res) => {
+// Create a new user
+});
+
+// More routes...
+
+app.listen(3001, () => {
+console.log('User microservice is running on port 3001');
+});
