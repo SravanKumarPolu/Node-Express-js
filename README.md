@@ -16,7 +16,7 @@ Express.js is a minimal and flexible Node.js web application framwork that provi
 
 Express.js is commonly used for building web applications.With Express , you can define routes for handling different HTTP requests like GET,POST ,PUT,DELETE,ect making it easy to buil RESTfull API or server dynamic contnet.
 
-EXample:
+#### Example:
 
 const express = require("express");
 const app = express();
@@ -34,3 +34,25 @@ app.post('/sbmit'(req,res)=>{
 app.listen(3000,()=>{
 console.log("server is running on port 3000")
 })
+
+#### Middleware:
+
+Express provides middleware, which are functions that have access to the request object('req'),the response object ('res'),and the next middlewre function in the application's request-response cycle. Middleware function can perform tasks like parsing request bodies, handling authenitication,logging,error handling,ect
+
+#### example:
+
+const express = require("express");
+const app = express();
+
+// Custom middleware for logging requests
+app.use((req, res, next) => {
+console.log(`${req.methods} request recevied for ${req.url}`);
+next();
+});
+
+// Route handling logic
+// ...
+
+app.listen(3000, () => {
+console.log("Server is running on port 3000");
+});
