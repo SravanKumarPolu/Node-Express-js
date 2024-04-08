@@ -56,3 +56,27 @@ next();
 app.listen(3000, () => {
 console.log("Server is running on port 3000");
 });
+
+#### Routing
+
+Express provides a simple and effective way to define routes for our appllication. you can define routes based on HTTP methods and URL patterns.This makes it easy to organize our application's logic into manageable chunks.
+
+#### Example:
+
+const express = require('express');
+const app = express();
+
+//define routes
+app.get('/users',(req,res)=>{
+// Handle logic for fetching users
+})
+
+app.post('/user',(req,res)=>{
+// Handle logic for creating a new user  
+})
+
+//More routes...
+
+app.listen(3000, () => {
+console.log('Server is running on port 3000');
+});
